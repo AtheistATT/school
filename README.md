@@ -1,4 +1,4 @@
 # Тут я буду выкладывать файлы по предметам: история, обществознание и культурология.
 ## https://github.com/AtheistATT/school
 
-<img src="./img/qr.png" alt="Логотип GitHub" width="100">
+<img src="./img/qr.png" alt="Логотип GitHub" width="600">
