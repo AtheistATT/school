@@ -7,4 +7,5 @@ requires-python = ">=3.13"
 dependencies = [
     "graphviz>=0.21",
     "hovercraft>=2.7",
+    "questionary>=2.1.1",
 ]
