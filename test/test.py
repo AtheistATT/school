@@ -39,13 +39,11 @@ test = test.split('\n')
 title = test.pop(0)
 input(title + "\nДля продолжения нажмите любую клавишу...")
 
+test.pop()
 q_max = len(test)
 q_user_right = 0
 
 for q in test:
-    if q == '':
-        break
-
     quest = question(q)
 
     if quest.ask():
