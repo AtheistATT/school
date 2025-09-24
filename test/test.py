@@ -2,6 +2,7 @@ import questionary
 import pdb
 import os
 import random
+import datetime
 
 class question:
     q_title = ""
@@ -35,11 +36,10 @@ test_file = questionary.select("Выберите название теста.",c
 with open(data_path + test_file, "r", encoding='utf-8') as file:
     test = file.read()
 
-test = test.split('\n')
+test = test.splitlines()
 title = test.pop(0)
-input(title + "\nДля продолжения нажмите любую клавишу...")
+user_name = input(title + "\nВведите фамилию >>>")
 
-test.pop()
 q_max = len(test)
 q_user_right = 0
 
@@ -48,11 +48,10 @@ for q in test:
 
     if quest.ask():
         q_user_right += 1
+log_str = f"{user_name} {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} {q_user_right}/{q_max} {q_user_right/q_max * 100:.1f}%"
+print(log_str)
 
-print(f"{q_user_right}/{q_max} {q_user_right/q_max * 100}%")
+with open("data/log.txt", 'a', encoding='utf-8') as file:
+    file.write(log_str + '\n')
 
-
-
-
-
-input("Программа завершена. Для продолжения нажмите любую клавишу...")
+input("Программа завершена. Для продолжения нажмите ENTER...")
