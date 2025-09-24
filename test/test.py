@@ -48,7 +48,7 @@ for q in test:
 
     if quest.ask():
         q_user_right += 1
-log_str = f"{user_name} {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} {q_user_right}/{q_max} {q_user_right/q_max * 100:.1f}%"
+log_str = f"{test_file} {user_name} {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} {q_user_right}/{q_max} {q_user_right/q_max * 100:.1f}%"
 print(log_str)
 
 with open("data/log.txt", 'a', encoding='utf-8') as file:
