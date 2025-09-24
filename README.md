@@ -2,4 +2,4 @@
 ## https://github.com/AtheistATT/school
 
 <img src="./img/qr.png" alt="Логотип GitHub" width="600">
-
+------------------
