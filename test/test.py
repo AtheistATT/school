@@ -34,20 +34,22 @@ with open(data_path + test_file, "r", encoding='utf-8') as file:
 
 test = test.splitlines()
 title = test.pop(0)
-user_name = input(title + "\nВведите фамилию >>>")
 
-q_max = len(test)
-q_user_right = 0
+while True:
+    user_name = input(title + "\nВведите фамилию >>>")
 
-for q in test:
-    quest = question(q)
+    q_max = len(test)
+    q_user_right = 0
 
-    if quest.ask():
-        q_user_right += 1
-log_str = f"{test_file} {user_name} {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} {q_user_right}/{q_max} {q_user_right/q_max * 100:.1f}%"
-print(log_str)
+    for q in test:
+        quest = question(q)
 
-with open("data/log.txt", 'a', encoding='utf-8') as file:
-    file.write(log_str + '\n')
+        if quest.ask():
+            q_user_right += 1
+    log_str = f"{test_file} {user_name} {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} {q_user_right}/{q_max} {q_user_right/q_max * 100:.1f}%"
+    print(log_str)
 
-input("Программа завершена. Для продолжения нажмите ENTER...")
+    with open("data/log.txt", 'a', encoding='utf-8') as file:
+        file.write(log_str + '\n')
+
+    input("Программа завершена. Для продолжения нажмите ENTER...")
