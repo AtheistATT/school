@@ -37,6 +37,7 @@ title = test.pop(0)
 
 while True:
     user_name = input(title + "\nВведите фамилию >>>")
+    random.shuffle(test)
 
     q_max = len(test)
     q_user_right = 0
