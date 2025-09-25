@@ -25,24 +25,25 @@ class question:
 
 data_path = "./data/hiden/"
 file_list = os.listdir(data_path)
-test = ""
 
 test_file = questionary.select("Выберите название теста.",choices=file_list, instruction="Для выбора теста используйте стрелочки и клавишу ENTER.").ask()
-q_size = int(input("Выберете колиество вопросов в тесте\n>>>"))
+q_size = int(input("Выберете количество вопросов в тесте\n>>>"))
 
-with open(data_path + test_file, "r", encoding='utf-8') as file:
-    test = file.read()
-
-test = test.splitlines()
-title = test.pop(0)
-
-if q_size < 1:
-    q_size = 1
-
-if q_size > len(test):
-    q_size = len(test)
 
 while True:
+    with open(data_path + test_file, "r", encoding='utf-8') as file:
+        test = file.read()
+
+    test = test.splitlines()
+    title = test.pop(0)
+
+    if q_size < 1:
+        q_size = 1
+
+    if q_size > len(test):
+        q_size = len(test)
+
+
     user_name = input(title + "\nВведите фамилию >>>")
     random.shuffle(test)
     test = test[:q_size]
