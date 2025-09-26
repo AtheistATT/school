@@ -31,6 +31,7 @@ q_size = int(input("Выберете количество вопросов в т
 
 
 while True:
+    os.system('clear')
     with open(data_path + test_file, "r", encoding='utf-8') as file:
         test = file.read()
 
@@ -62,4 +63,4 @@ while True:
     with open("data/log.txt", 'a', encoding='utf-8') as file:
         file.write(log_str + '\n')
 
-    input("Программа завершена. Для продолжения нажмите ENTER...")
+    input("Для продолжения нажмите ENTER...")
