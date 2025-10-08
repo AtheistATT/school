@@ -13,7 +13,7 @@ class question:
        self.q_choise = q_list
 
     def ask(self):
-        u_choise = questionary.select(self.q_title, choices=self.q_choise, instruction="Для выбора ответа используйте стрелочки и клавишу ENTER.").ask()
+        u_choise = questionary.select(self.q_title, choices=self.q_choise, instruction="⬆️ ⬇️ ↩️.").ask()
         if u_choise == self.q_right_ansver:
             return True
         else:
@@ -26,7 +26,7 @@ class question:
 data_path = "./data/hiden/"
 file_list = os.listdir(data_path)
 
-test_file = questionary.select("Выберите название теста.",choices=file_list, instruction="Для выбора теста используйте стрелочки и клавишу ENTER.").ask()
+test_file = questionary.select("Выберите название теста.",choices=file_list, instruction="⬆️ ⬇️ ↩️").ask()
 q_size = int(input("Выберете количество вопросов в тесте\n>>>"))
 
 
@@ -45,7 +45,7 @@ while True:
         q_size = len(test)
 
 
-    user_name = input(title + "\nВведите фамилию >>>")
+    user_name = input(title + "\nВведите фамилию ↩️ >>>")
     random.shuffle(test)
     test = test[:q_size]
 
