@@ -28,7 +28,7 @@ file_list = os.listdir(data_path)
 
 test_file = questionary.select("Выберите название теста.",choices=file_list, instruction="⬆️ ⬇️ ↩️").ask()
 q_size = int(input("Выберете количество вопросов в тесте\n>>>"))
-
+mark = input("Введите название класса\n>>>")
 
 while True:
     os.system('clear')
@@ -57,7 +57,7 @@ while True:
 
         if quest.ask():
             q_user_right += 1
-    log_str = f"{test_file} {user_name} {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} {q_user_right}/{q_max} {q_user_right/q_max * 100:.1f}%"
+    log_str = f"{mark} {test_file} {user_name} {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} {q_user_right}/{q_max} {q_user_right/q_max * 100:.1f}%"
     print(log_str)
 
     with open("data/log.txt", 'a', encoding='utf-8') as file:
