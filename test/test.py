@@ -25,6 +25,8 @@ class question:
 
 data_path = "./data/hiden/"
 file_list = os.listdir(data_path)
+last = ''
+user_name = ''
 
 test_file = questionary.select("Выберите название теста.",choices=file_list, instruction="⬆️ ⬇️ ↩️").ask()
 q_size = int(input("Выберете количество вопросов в тесте\n>>>"))
@@ -45,6 +47,7 @@ while True:
         q_size = len(test)
 
 
+    print(f"{user_name} {last}")
     user_name = input(title + "\nВведите фамилию ↩️ >>>")
     random.shuffle(test)
     test = test[:q_size]
@@ -59,6 +62,7 @@ while True:
             q_user_right += 1
     log_str = f"{mark} {test_file} {user_name} {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} {q_user_right}/{q_max} {q_user_right/q_max * 100:.1f}%"
     print(log_str)
+    last = log_str
 
     with open("data/log.txt", 'a', encoding='utf-8') as file:
         file.write(log_str + '\n')
