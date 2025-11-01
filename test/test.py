@@ -1,3 +1,6 @@
+'''
+Это моя программа для проведения тестов!
+'''
 import questionary
 #import pdb
 import os
