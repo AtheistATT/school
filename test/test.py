@@ -1,3 +1,6 @@
+'''
+Это мой скрипт.
+'''
 import questionary
 #import pdb
 import os
