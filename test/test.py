@@ -1,7 +1,3 @@
-'''
-Это моя программа для проведения тестов!
-И она работает!
-'''
 import questionary
 #import pdb
 import os
