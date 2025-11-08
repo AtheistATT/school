@@ -88,7 +88,7 @@ while True:
             detals_log += ' - '  
         detals_log += quest.q_title + '(' + quest.q_right_ansver + ') Ваш ответ:'+ quest.u_choise +'\n'
 
-    log_str = f"{mark} {test_file} {user_name} {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} {q_user_right}/{q_max} {q_user_right/q_max * 100:.1f}%"
+    log_str = f"{mark}|{test_file}|{user_name}|{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}|{q_user_right}/{q_max}|{q_user_right/q_max * 100:.1f}%"
     print(log_str)
     last = log_str
 
