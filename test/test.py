@@ -28,18 +28,30 @@ class question:
 
 
 data_path = "./data/hiden/"
+p_lists = "./data/hiden/lists/"
 file_list = os.listdir(data_path)
+classes_lisl = os.listdir(p_lists)
 last = ''
 user_name = ''
 detals_log = ''
+students_list = ''
 
-test_file = questionary.select("Выберите название теста.",choices=file_list, instruction="⬆️ ⬇️ ↩️").ask()
+test_file = questionary.select("Выберите название теста.", choices=file_list, instruction="⬆️ ⬇️ ↩️").ask()
 q_size = int(input("Выберете количество вопросов в тесте\n>>>"))
-mark = input("Введите название класса\n>>>")
+mark = questionary.select("Выберите название класса", choices=classes_lisl, instruction="⬆️ ⬇️ ↩️").ask()
+
+with open(p_lists + mark, "r", encoding='utf-8') as file:
+    students_list = file.read()
+
+students_list = students_list.splitlines()
 
 detals_log = mark + '\n'
 
 while True:
+
+    if len(students_list) == 0:
+        break
+
     os.system('clear')
     with open(data_path + test_file, "r", encoding='utf-8') as file:
         test = file.read()
@@ -55,7 +67,8 @@ while True:
 
 
     print(last)
-    user_name = input(title + "\nВведите фамилию ↩️ >>>")
+    user_name = questionary.select("Выберете фамилию", choices=students_list, instruction="⬆️ ⬇️ ↩️").ask()
+    students_list.remove(user_name)
 
     detals_log +=  user_name + '\n'
 
