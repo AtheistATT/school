@@ -29,7 +29,7 @@ class question:
 
 data_path = "/home/atheist/school/test/data/hiden/"
 p_lists = "/home/atheist/school/test/data/hiden/lists/"
-file_list = os.listdir(data_path)
+file_list = [f for f in os.listdir(data_path) if os.path.isfile(os.path.join(data_path, f))]
 classes_lisl = os.listdir(p_lists)
 last = ''
 user_name = ''
@@ -92,9 +92,9 @@ while True:
     print(log_str)
     last = log_str
 
-    with open("data/log.txt", 'a', encoding='utf-8') as file:
+    with open("/home/atheist/school/test/data/log.txt", 'a', encoding='utf-8') as file:
         file.write(log_str + '\n')
-    with open("data/log_d.txt", 'a', encoding='utf-8') as file:
+    with open("/home/atheist/school/test/data/log_d.txt", 'a', encoding='utf-8') as file:
         file.write(detals_log + '\n')
 
 
