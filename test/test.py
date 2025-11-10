@@ -27,8 +27,8 @@ class question:
 
 
 
-data_path = "./data/hiden/"
-p_lists = "./data/hiden/lists/"
+data_path = "/home/atheist/school/test/data/hiden/"
+p_lists = "/home/atheist/school/test/data/hiden/lists/"
 file_list = os.listdir(data_path)
 classes_lisl = os.listdir(p_lists)
 last = ''
