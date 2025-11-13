@@ -70,6 +70,9 @@ while True:
     user_name = questionary.select("Выберете фамилию", choices=students_list, instruction="⬆️ ⬇️ ↩️").ask()
     students_list.remove(user_name)
 
+    if questionary.select("Выберите название класса", choices=("Начать тест", "Отсутствует"), instruction="⬆️ ⬇️ ↩️").ask() == "Отсутствует":
+        continue
+
     detals_log +=  user_name + '\n'
 
     random.shuffle(test)
