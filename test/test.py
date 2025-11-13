@@ -29,7 +29,7 @@ class question:
 
 data_path = "/home/atheist/school/test/data/hiden/"
 p_lists = "/home/atheist/school/test/data/hiden/lists/"
-file_list = [f for f in os.listdir(data_path) if os.path.isfile(os.path.join(data_path, f))]
+file_list = sorted([f for f in os.listdir(data_path) if os.path.isfile(os.path.join(data_path, f))])
 classes_lisl = os.listdir(p_lists)
 last = ''
 user_name = ''
