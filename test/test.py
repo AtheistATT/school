@@ -51,6 +51,7 @@ while True:
 
     try:
         if datetime.datetime.now().minute != int(input("Введите пароль >>> ")):
+            print("No way!")
             continue
     except:
         print("No way!")
