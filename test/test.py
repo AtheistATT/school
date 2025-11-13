@@ -49,6 +49,13 @@ detals_log = mark + '\n'
 
 while True:
 
+    try:
+        if datetime.datetime.now().minute != int(input("Введите пароль >>> ")):
+            continue
+    except:
+        print("No way!")
+        continue
+
     if len(students_list) == 0:
         break
 
