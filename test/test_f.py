@@ -98,7 +98,7 @@ while True:
 
     with open("/home/atheist/school/test/data/log.txt", 'a', encoding='utf-8') as file:
         file.write(log_str + '\n')
-    with open("/home/atheist/school/test/data/log_d.txt", 'a', encoding='utf-8') as file:
+    with open("/home/atheist/school/test/data/log_d.txt", 'w', encoding='utf-8') as file:
         file.write(detals_log + '\n')
 
 
